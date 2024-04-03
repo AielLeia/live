@@ -9,7 +9,13 @@ services:
       MYSQL_PASSWORD: 'live'
       MYSQL_ROOT_PASSWORD: 'password'
       TZ: 'Europe/Paris'
-    command: [ 'mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci','--default-time-zone=Europe/Paris' ]
+    command:
+      [
+        'mysqld',
+        '--character-set-server=utf8mb4',
+        '--collation-server=utf8mb4_unicode_ci',
+        '--default-time-zone=Europe/Paris',
+      ]
     ports:
       - '3306:3306'
     expose:
