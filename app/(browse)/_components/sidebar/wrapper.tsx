@@ -1,11 +1,11 @@
 'use client';
 
-import { useSidebar } from '@/store/use-sidebar';
 import React from 'react';
+import { useIsClient } from 'usehooks-ts';
 
 import { cn } from '@/lib/utils';
 
-import { useIsClient } from 'usehooks-ts';
+import { useSidebar } from '@/store/use-sidebar';
 
 import { FollowingSkeleton } from '@/app/(browse)/_components/sidebar/following';
 import { RecommendedSkeleton } from '@/app/(browse)/_components/sidebar/recommended';
