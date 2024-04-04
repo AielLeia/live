@@ -12,4 +12,7 @@ export const config = {
   CLERK_AFTER_SIGN_OUT_URL: '/',
 
   CLERK_WEBHOOK_SECRET: env('CLERK_WEBHOOK_SECRET'),
+
+  PUBLIC_ROUTES: ['/', '/api/webhooks(.*)'],
+  MIDDLEWARES_MATCHER: ['/((?!.+.[w]+$|_next).*)', '/', '/(api|trpc)(.*)'],
 };
