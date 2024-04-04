@@ -15,7 +15,7 @@ export const follow = async (id: string) => {
 
     return followedUser;
   } catch (err) {
-    if (err instanceof Error) throw new Error(err.message);
+    if (err instanceof Error) throw new Error(err.message, err);
     throw new Error('Internal error');
   }
 };
@@ -31,7 +31,7 @@ export const unfollow = async (id: string) => {
 
     return unfollowedUser;
   } catch (err) {
-    if (err instanceof Error) throw new Error(err.message);
+    if (err instanceof Error) throw new Error(err.message, err);
     throw new Error('Internal error');
   }
 };
