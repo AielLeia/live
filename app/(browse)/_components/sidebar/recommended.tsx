@@ -1,8 +1,7 @@
 'use client';
 
-import { User } from '@prisma/client';
-
 import { useSidebar } from '@/store/use-sidebar';
+import { User } from '@prisma/client';
 
 import UserItem, {
   UserItemSkeleton,
@@ -30,7 +29,7 @@ const Recommended = ({ data }: RecommendedProps) => {
             <UserItem
               username={user.username}
               imageUrl={user.imageUrl}
-              isLive={true}
+              isLive={false}
               key={user.id}
             />
           );

@@ -5,6 +5,7 @@ import type { Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
 import { Inter } from 'next/font/google';
 import React from 'react';
+import { Toaster } from 'sonner';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
             forcedTheme="dark"
             storageKey="live-theme"
           >
+            <Toaster theme="light" position="bottom-center" />
             {children}
           </ThemeProvider>
         </body>
