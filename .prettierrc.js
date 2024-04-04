@@ -12,6 +12,7 @@ const config = {
     'data',
     'schemas',
     'lib',
+    'store',
     'hooks',
     'component',
   ],
