@@ -9,12 +9,12 @@ const config = {
   importOrder: [
     '<THIRD_PARTY_MODULES>',
     'actions/',
-    'data',
-    'schemas',
-    'lib',
-    'store',
-    'hooks',
-    'component',
+    'data/',
+    'schemas/',
+    'lib/',
+    'store/',
+    'hooks/',
+    'components/',
   ],
   importOrderSeparation: true,
 };

@@ -43,8 +43,8 @@ const UserAvatar = ({
       >
         <AvatarImage src={imageUrl} className="object-cover" />
         <AvatarFallback>
-          {username[0]}
-          {username[username.length - 1]}
+          {username[0].toUpperCase()}
+          {username[username.length - 1].toUpperCase()}
         </AvatarFallback>
       </Avatar>
       {canShowBadge && (

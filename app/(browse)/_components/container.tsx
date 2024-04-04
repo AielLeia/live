@@ -1,12 +1,11 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import { useMediaQuery } from 'usehooks-ts';
 
 import { cn } from '@/lib/utils';
 
 import { useSidebar } from '@/store/use-sidebar';
-
-import { useMediaQuery } from 'usehooks-ts';
 
 type ContainerProps = {
   children: React.ReactNode;
