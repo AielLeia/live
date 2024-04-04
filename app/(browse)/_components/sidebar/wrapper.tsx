@@ -1,12 +1,13 @@
 'use client';
 
+import { useSidebar } from '@/store/use-sidebar';
 import React from 'react';
-import { useIsClient } from 'usehooks-ts';
 
 import { cn } from '@/lib/utils';
 
-import { useSidebar } from '@/store/use-sidebar';
+import { useIsClient } from 'usehooks-ts';
 
+import { FollowingSkeleton } from '@/app/(browse)/_components/sidebar/following';
 import { RecommendedSkeleton } from '@/app/(browse)/_components/sidebar/recommended';
 import { ToggleSkeleton } from '@/app/(browse)/_components/sidebar/toggle';
 
@@ -22,6 +23,7 @@ const Wrapper = ({ children }: WrapperProps) => {
     return (
       <aside className="fixed left-0 flex flex-col w-[70px] lg:w-60 h-full bg-background border-r border-[#2D2E35] z-50">
         <ToggleSkeleton />
+        <FollowingSkeleton />
         <RecommendedSkeleton />
       </aside>
     );
