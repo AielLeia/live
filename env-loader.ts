@@ -11,6 +11,11 @@ const ENV = {
     process.env.NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL,
 
   CLERK_WEBHOOK_SECRET: process.env.CLERK_WEBHOOK_SECRET,
+
+  LIVEKIT_WEBSOCKET_URL: process.env.NEXT_PUBLIC_LIVEKIT_WEBSOCKET_URL,
+  LIVEKIT_API_URL: process.env.LIVEKIT_API_URL,
+  LIVEKIT_API_KEY: process.env.LIVEKIT_API_KEY,
+  LIVEKIT_API_SECRET: process.env.LIVEKIT_API_SECRET,
 } as const;
 
 type EnvironmentVariable = typeof ENV;
