@@ -20,6 +20,7 @@ const ChatMessage = ({ data }: ChatMessageProps) => {
           <span className="truncate" style={{ color }}>
             {data.from?.name}
           </span>
+          :
         </p>
         <p className="text-sm break-all">{data.message}</p>
       </div>

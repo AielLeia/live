@@ -11,6 +11,7 @@ import React from 'react';
 import LiveVideo from '@/components/stream-palyer/live-video';
 import LoadingVideo from '@/components/stream-palyer/loading-video';
 import OfflineVideo from '@/components/stream-palyer/offline-video';
+import { Skeleton } from '@/components/ui/skeleton';
 
 type VideoProps = {
   hostname: string;
@@ -36,6 +37,14 @@ const Video = ({ hostname, hostIdentity }: VideoProps) => {
   }
 
   return <div className="aspect-video border-b group relative">{content}</div>;
+};
+
+export const VideoSkeleton = () => {
+  return (
+    <div className="aspect-video border-x border-background">
+      <Skeleton className="h-full w-full rounded-none" />
+    </div>
+  );
 };
 
 export default Video;

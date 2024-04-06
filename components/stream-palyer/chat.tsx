@@ -11,9 +11,16 @@ import { useMediaQuery } from 'usehooks-ts';
 
 import { ChatVariant, useChatSidebar } from '@/store/use-chat-sidebar';
 
-import ChatForm from '@/components/stream-palyer/chat-form';
-import ChatHeader from '@/components/stream-palyer/chat-header';
-import ChatList from '@/components/stream-palyer/chat-list';
+import ChatCommunity from '@/components/stream-palyer/chat-community';
+import ChatForm, {
+  ChatFormSkeleton,
+} from '@/components/stream-palyer/chat-form';
+import ChatHeader, {
+  ChatHeaderSkeleton,
+} from '@/components/stream-palyer/chat-header';
+import ChatList, {
+  ChatListSkeleton,
+} from '@/components/stream-palyer/chat-list';
 
 type ChatProps = {
   viewerName: string;
@@ -78,7 +85,25 @@ const Chat = ({
           />
         </>
       )}
-      {chatVariant === ChatVariant.COMMUNITY && <>Community mode</>}
+      {chatVariant === ChatVariant.COMMUNITY && (
+        <>
+          <ChatCommunity
+            viewerName={viewerName}
+            hostname={hostname}
+            isHidden={isHidden}
+          />
+        </>
+      )}
+    </div>
+  );
+};
+
+export const ChatSkeleton = () => {
+  return (
+    <div className="flex flex-col border-l border-b pt-0 h-[calc(100vh-80px)]">
+      <ChatHeaderSkeleton />
+      <ChatListSkeleton />
+      <ChatFormSkeleton />
     </div>
   );
 };
