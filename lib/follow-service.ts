@@ -102,7 +102,7 @@ export const getFollowedUsers = async () => {
         followerId: self.id,
         following: { blocking: { none: { blockedId: self.id } } },
       },
-      include: { following: true },
+      include: { following: { include: { stream: true } } },
     });
   } catch (err) {
     return [];
