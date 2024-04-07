@@ -14,7 +14,6 @@ const roomService = new RoomServiceClient(
 );
 
 export const block = async (id: string) => {
-  // TODO: Adapt to disconnect from livestream
   try {
     const self = await getSelf();
     let blockedUser;
@@ -38,11 +37,10 @@ export const block = async (id: string) => {
 
 export const unblock = async (id: string) => {
   try {
+    const self = await getSelf();
+
     const unblockedUser = await unblockUser(id);
-    revalidatePath('/');
-    if (unblockedUser) {
-      revalidatePath(`/${unblockedUser.blocked.username}`);
-    }
+    revalidatePath(`/u/${self.username}/community`);
 
     return unblockedUser;
   } catch (err) {
