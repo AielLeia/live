@@ -30,7 +30,7 @@ const ChatForm = ({
 }: ChatFormProps) => {
   const [isDelayBlocked, setIsDelayBlocked] = useState(false);
 
-  const isFollowerOnlyAndNotFollowing = isFollowing && !isFollowing;
+  const isFollowerOnlyAndNotFollowing = isChatFollowerOnly && !isFollowing;
   const isDisabled =
     isHidden || isDelayBlocked || isFollowerOnlyAndNotFollowing;
 
@@ -69,8 +69,8 @@ const ChatForm = ({
           disabled={isDisabled}
           placeholder="Send a message"
           className={cn(
-            'border-white/10 my-2',
-            isChatFollowerOnly && 'rounded-t-none border-t-0'
+            'border-white/10',
+            (isChatFollowerOnly || isChatDelayed) && 'rounded-t-none border-t-0'
           )}
         />
       </div>

@@ -46,7 +46,7 @@ const Actions = ({ userId, isFollowing }: ActionsProps) => {
     startTransition(async () => {
       try {
         const blockedUser = await block(userId);
-        toast.success(`Your have blocked ${blockedUser.blocked.username}`);
+        toast.success(`Your have blocked ${blockedUser?.blocked.username}`);
       } catch (err) {
         if (err instanceof Error) toast.error(err.message);
       }

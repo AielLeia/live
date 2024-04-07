@@ -36,10 +36,10 @@ const Actions = ({ isFollowing, hostIdentity, isHost }: ActionsProps) => {
         let message;
         let data;
         if (isFollowing) {
-          data = await unfollow(userId);
+          data = await unfollow(hostIdentity);
           message = `You are now unfollowing ${data.following.username}`;
         } else {
-          data = await follow(userId);
+          data = await follow(hostIdentity);
           message = `You are now following ${data.following.username}`;
         }
         toast.success(message);
