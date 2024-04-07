@@ -2,7 +2,6 @@
 
 import { config } from '@/config';
 import { LiveKitRoom } from '@livekit/components-react';
-import { Stream, User } from '@prisma/client';
 
 import { cn } from '@/lib/utils';
 
@@ -17,8 +16,30 @@ import Header, { HeaderSkeleton } from '@/components/stream-palyer/header';
 import InfoCard from '@/components/stream-palyer/info-card';
 import Video, { VideoSkeleton } from '@/components/stream-palyer/video';
 
+type Stream = {
+  id: string;
+  isLive: boolean;
+  isChatDelayed: boolean;
+  isChatEnabled: boolean;
+  isChatFollowerOnly: boolean;
+  thumbnailUrl: string | null;
+  name: string;
+};
+
+type User = {
+  id: string;
+  username: string;
+  bio: string | null;
+  imageUrl: string;
+  externalUserId: string;
+  stream: Stream | null;
+  _count: {
+    followedBy: number;
+  };
+};
+
 type StreamPlayerProps = {
-  user: User & { stream: Stream | null; _count: { followedBy: number } };
+  user: User;
   stream: Stream;
   isFollowing: boolean;
 };

@@ -25,6 +25,8 @@ model User {
   blockedBy Block[] @relation("BlockedBy")
 
   stream Stream?
+
+  @@fulltext([username])
 }
 
 model Stream {
