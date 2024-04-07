@@ -31,6 +31,7 @@ model Stream {
   id           String  @id @default(uuid())
   name         String  @db.Text
   thumbnailUrl String? @db.Text
+  thumbnailKey String? @db.Text
 
   ingressId String? @unique
   serverUrl String? @db.Text

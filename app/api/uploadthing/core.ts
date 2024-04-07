@@ -21,6 +21,7 @@ export const ourFileRouter = {
         },
         data: {
           thumbnailUrl: file.url,
+          thumbnailKey: file.key,
         },
       });
 
