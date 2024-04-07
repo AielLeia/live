@@ -10,6 +10,7 @@ import { useChatSidebar } from '@/store/use-chat-sidebar';
 
 import { useViewerToken } from '@/hooks/use-viewer-token';
 
+import AboutCard from '@/components/stream-palyer/about-card';
 import Chat, { ChatSkeleton } from '@/components/stream-palyer/chat';
 import ChatToggle from '@/components/stream-palyer/chat-toggle';
 import Header, { HeaderSkeleton } from '@/components/stream-palyer/header';
@@ -17,7 +18,7 @@ import InfoCard from '@/components/stream-palyer/info-card';
 import Video, { VideoSkeleton } from '@/components/stream-palyer/video';
 
 type StreamPlayerProps = {
-  user: User & { stream: Stream | null };
+  user: User & { stream: Stream | null; _count: { followedBy: number } };
   stream: Stream;
   isFollowing: boolean;
 };
@@ -60,6 +61,13 @@ const StreamPlayer = ({ user, stream, isFollowing }: StreamPlayerProps) => {
             viewerIdentity={identity}
             name={stream.name}
             thumbnailUrl={stream.thumbnailUrl}
+          />
+          <AboutCard
+            hostname={user.username}
+            hostIdentity={user.id}
+            viewerIdentity={identity}
+            bio={user.bio}
+            followedByCount={user._count.followedBy}
           />
         </div>
         <div className={cn('col-span-1', collapsed && 'hidden')}>

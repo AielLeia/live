@@ -4,7 +4,7 @@ export const getUserByUsername = async (username: string) => {
   try {
     return await db.user.findUnique({
       where: { username },
-      include: { stream: true },
+      include: { stream: true, _count: { select: { followedBy: true } } },
     });
   } catch (err) {
     return null;
