@@ -16,6 +16,9 @@ const ENV = {
   LIVEKIT_API_URL: process.env.LIVEKIT_API_URL,
   LIVEKIT_API_KEY: process.env.LIVEKIT_API_KEY,
   LIVEKIT_API_SECRET: process.env.LIVEKIT_API_SECRET,
+
+  UPLOADTHING_SECRET: process.env.UPLOADTHING_SECRET,
+  UPLOADTHING_APP_ID: process.env.UPLOADTHING_APP_ID,
 } as const;
 
 type EnvironmentVariable = typeof ENV;

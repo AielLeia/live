@@ -13,10 +13,13 @@ export const config = {
 
   CLERK_WEBHOOK_SECRET: env('CLERK_WEBHOOK_SECRET'),
 
-  PUBLIC_ROUTES: ['/', '/api/webhooks(.*)'],
+  PUBLIC_ROUTES: ['/', '/api/webhooks(.*)', '/api/uploadthing'],
 
   LIVEKIT_WEBSOCKET_URL: env('LIVEKIT_WEBSOCKET_URL'),
   LIVEKIT_API_URL: env('LIVEKIT_API_URL'),
   LIVEKIT_API_KEY: env('LIVEKIT_API_KEY'),
   LIVEKIT_API_SECRET: env('LIVEKIT_API_SECRET'),
+
+  UPLOADTHING_SECRET: env('UPLOADTHING_SECRET'),
+  UPLOADTHING_APP_ID: env('UPLOADTHING_APP_ID'),
 };

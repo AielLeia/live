@@ -13,6 +13,7 @@ import { useViewerToken } from '@/hooks/use-viewer-token';
 import Chat, { ChatSkeleton } from '@/components/stream-palyer/chat';
 import ChatToggle from '@/components/stream-palyer/chat-toggle';
 import Header, { HeaderSkeleton } from '@/components/stream-palyer/header';
+import InfoCard from '@/components/stream-palyer/info-card';
 import Video, { VideoSkeleton } from '@/components/stream-palyer/video';
 
 type StreamPlayerProps = {
@@ -53,6 +54,12 @@ const StreamPlayer = ({ user, stream, isFollowing }: StreamPlayerProps) => {
             imageUrl={user.imageUrl}
             isFollowing={isFollowing}
             name={stream.name}
+          />
+          <InfoCard
+            hostIdentity={user.id}
+            viewerIdentity={identity}
+            name={stream.name}
+            thumbnailUrl={stream.thumbnailUrl}
           />
         </div>
         <div className={cn('col-span-1', collapsed && 'hidden')}>
